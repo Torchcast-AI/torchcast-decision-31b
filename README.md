@@ -3,7 +3,7 @@
 A text-based decision model developed by **Torchcast AI**, based on Gemma-4-31B-it. It returns yes/no probabilities
 (`noul`), choice distributions (`choice`) and ordinal score distributions (`score`) through a TypeSafe-compatible API.
 
-[Model card and weights](https://huggingface.co/yangchen-torchcast/torchcast-decision-31b/tree/v1.0.0) (private; access on request)
+[Model card and weights](https://huggingface.co/torchcast-ai/torchcast-decision-31b/tree/v1.0.0)
 
 ## Model
 
@@ -35,7 +35,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install "torch==2.13.0" --index-url https://download.pytorch.org/whl/cu130
 pip install "transformers==5.17.0" "kernels==0.17.2" "accelerate==1.15.0" safetensors tokenizers jinja2 numpy "huggingface_hub[cli]"
 
-hf download yangchen-torchcast/torchcast-decision-31b --revision v1.0.0 --local-dir torchcast-decision-31b
+hf download torchcast-ai/torchcast-decision-31b --revision v1.0.0 --local-dir torchcast-decision-31b
 cd torchcast-decision-31b
 sha256sum -c SHA256SUMS
 python -m torchcast_decision.server --prefetch-kernels      # once, with network access (H100)
